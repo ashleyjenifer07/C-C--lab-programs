@@ -1,15 +1,21 @@
-bool isPalindrome(int x) {
-   long int y,rev=0;
-    y=x;
-    if(x<0) return false;
-    while(x)
-    {
-        rev=rev*10+x%10;
-        x/=10;
+#include <iostream>
+#include <string>
+#include <algorithm>
+using namespace std;
+
+int main() {
+    string str;
+    cout << "Enter a string: ";
+    cin >> str;
+
+    string rev = str;
+    reverse(rev.begin(), rev.end());
+
+    if (str == rev) {
+        cout << str << " is a palindrome";
+    } else {
+        cout << str << " is not a palindrome";
     }
-    if(y==rev)
-    {
-        return true;
-    }
-    return false;
+
+    return 0;
 }
